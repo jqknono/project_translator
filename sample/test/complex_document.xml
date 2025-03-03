@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:custom="http://example.org/custom-namespace">
+    <metadata>
+        <title>Complex XML Document Test</title>
+        <author>Project Translator Team</author>
+        <created>2023-07-15</created>
+        <version>1.0</version>
+        <language>en-US</language>
+    </metadata>
+    
+    <header>
+        <h1>XML Format Testing Document</h1>
+        <subtitle>For translation testing purposes</subtitle>
+    </header>
+
+    <toc>
+        <section id="section1">Introduction</section>
+        <section id="section2">Code Examples</section>
+        <section id="section3">Data Tables</section>
+        <section id="section4">Custom Elements</section>
+        <section id="section5">Mixed Content</section>
+    </toc>
+
+    <content>
+        <section id="section1">
+            <h2>Introduction</h2>
+            <p>This is a complex XML document designed to test the translation capabilities of the Project Translator extension. It contains various XML elements, attributes, and content types that might pose challenges for translation.</p>
+            <p>The document includes examples of <emphasis>formatted text</emphasis>, <strong>strong emphasis</strong>, and <code>inline code</code> that should be preserved during translation.</p>
+            <custom:note type="important">
+                This is a custom element with an attribute that contains important information that should be carefully translated while preserving the XML structure.
+            </custom:note>
+        </section>
+
+        <section id="section2">
+            <h2>Code Examples</h2>
+            <p>The following are code examples in different programming languages that should not be translated:</p>
+            
+            <code-block language="javascript">
+function calculateSum(a, b) {
+    // This is a simple JavaScript function
+    console.log("Calculating sum of", a, "and", b);
+    return a + b;
+}
+
+// Call the function with test values
+const result = calculateSum(5, 10);
+console.log(`The sum is: ${result}`);
+            </code-block>
+
+            <p>Python example with comments that should be translated:</p>
+            <code-block language="python">
+def process_data(data_list):
+    """
+    Process a list of data items and return aggregated results.
+    This docstring should be translated while preserving the code.
+    """
+    results = []
+    for item in data_list:
+        # Transform each item - this comment should be translated
+        processed_item = item.strip().lower()
+        results.append(processed_item)
+    
+    return {
+        "count": len(results),
+        "items": results,
+        "status": "completed"
+    }
+            </code-block>
+        </section>
+
+        <section id="section3">
+            <h2>Data Tables</h2>
+            <p>Below is a sample data table that should maintain its structure after translation:</p>
+            
+            <table id="product-table">
+                <caption>Product Comparison</caption>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price (USD)</th>
+                        <th>Rating</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SmartWidget Pro</td>
+                        <td>Advanced smart widget with AI capabilities</td>
+                        <td>$199.99</td>
+                        <td>4.5/5.0</td>
+                        <td>In Stock</td>
+                    </tr>
+                    <tr>
+                        <td>DataAnalyzer Basic</td>
+                        <td>Entry-level data analysis tool for beginners</td>
+                        <td>$49.99</td>
+                        <td>3.8/5.0</td>
+                        <td>2-3 Week Delay</td>
+                    </tr>
+                    <tr>
+                        <td>CloudSync Enterprise</td>
+                        <td>Enterprise-grade cloud synchronization solution</td>
+                        <td>$399.99</td>
+                        <td>4.9/5.0</td>
+                        <td>Available on Request</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">Prices and availability subject to change without notice</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="section4">
+            <h2>Custom Elements</h2>
+            <p>This section demonstrates custom XML elements with various attributes that should be preserved:</p>
+            
+            <custom:component id="widget-1" type="display" priority="high">
+                <custom:property name="color">blue</custom:property>
+                <custom:property name="size">medium</custom:property>
+                <custom:property name="opacity">0.8</custom:property>
+                <custom:description>
+                    This is a specialized display widget used for visualizing time-series data in an interactive format.
+                    Users can zoom in/out and filter data points based on various criteria.
+                </custom:description>
+            </custom:component>
+
+            <custom:alert level="warning">
+                <title>System Resource Warning</title>
+                <message>The system is currently operating at 85% of available memory capacity. Consider closing unused applications to improve performance.</message>
+                <action-items>
+                    <item priority="high">Close background applications</item>
+                    <item priority="medium">Clear temporary cache files</item>
+                    <item priority="low">Consider system restart if problems persist</item>
+                </action-items>
+            </custom:alert>
+        </section>
+
+        <section id="section5">
+            <h2>Mixed Content</h2>
+            <div class="mixed-content">
+                <p>This paragraph contains <em>emphasized text</em>, <a href="https://example.com">hyperlinks</a>, and <span class="highlight">highlighted segments</span> that should all be properly translated while preserving the formatting.</p>
+                
+                <blockquote author="Anonymous" source="Technical Documentation Guidelines">
+                    Good documentation should be clear, concise, and comprehensive. It should anticipate user questions and provide answers before they are asked.
+                </blockquote>
+                
+                <ul class="feature-list">
+                    <li>Responsive design that <strong>adapts to any device</strong> size</li>
+                    <li>Integration with <code>REST APIs</code> and GraphQL endpoints</li>
+                    <li>Support for <em>real-time data processing</em> and visualization</li>
+                    <li>Customizable dashboards with drag-and-drop interface</li>
+                </ul>
+                
+                <div class="info-panel">
+                    <h3>Did You Know?</h3>
+                    <p>XML (eXtensible Markup Language) was designed to store and transport data, and was derived from SGML (Standard Generalized Markup Language), which is more complex.</p>
+                    <p>Unlike HTML, XML tags are not predefined - you need to define your own tags.</p>
+                </div>
+            </div>
+        </section>
+    </content>
+
+    <appendix>
+        <references>
+            <reference id="ref1">
+                <citation>Smith, J. (2022). "Advanced XML Processing Techniques". Journal of Markup Languages, 15(3), 234-256.</citation>
+                <url>https://example.org/jml/15/3/234</url>
+            </reference>
+            <reference id="ref2">
+                <citation>Zhang, L. &amp; Johnson, T. (2021). "Multilingual Support in XML-based Documentation". International Documentation Standards, 8(2), 112-145.</citation>
+                <url>https://example.org/ids/8/2/112</url>
+            </reference>
+        </references>
+        
+        <glossary>
+            <term name="XML">eXtensible Markup Language</term>
+            <term name="DOM">Document Object Model</term>
+            <term name="XPath">XML Path Language</term>
+            <term name="XSD">XML Schema Definition</term>
+            <term name="XSLT">eXtensible Stylesheet Language Transformations</term>
+        </glossary>
+    </appendix>
+    
+    <footer>
+        <copyright>© 2023 Project Translator Team. All rights reserved.</copyright>
+        <contact email="support@example.com" phone="+1-555-123-4567" />
+        <legal>
+            This document is provided for testing purposes only. No part of this document may be reproduced without proper attribution.
+        </legal>
+    </footer>
+</document>

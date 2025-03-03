@@ -1,0 +1,17 @@
+{
+  "command.translateProject": "翻译项目",
+  "command.pauseTranslation": "暂停翻译",
+  "command.resumeTranslation": "继续翻译",
+  "command.stopTranslation": "停止翻译",
+  "config.sourceFolder.description": "源文件夹路径，用于存储上次选择的翻译文件夹路径",
+  "config.destFolders.description": "翻译目标文件夹配置，可以指定多个目标文件夹及其对应的目标语言",
+  "config.translationIntervalDays.description": "翻译间隔天数，如果目标文件存在并且在此天数内已翻译，则会跳过",
+  "config.ignoreTranslationExtensions.description": "不需要翻译的文本文件扩展名列表，这些文件将直接复制到目标文件夹",
+  "config.ignorePaths.description": "忽略的路径模式列表，使用通配符，这些文件将不会复制到目标文件夹",
+  "config.currentVendor.description": "当前使用的API供应商",
+  "config.vendors.description": "API供应商配置列表",
+  "config.systemPrompts.description": "系统提示数组，用于指导翻译过程，可以添加多个系统提示",
+  "config.userPrompts.description": "用户定义的提示数组，这些提示将在翻译过程中添加到系统提示之后",
+  "config.segmentationMarkers.description": "按文件类型配置的分段标记，支持正则表达式",
+  "config.language.description": "扩展的语言"
+}

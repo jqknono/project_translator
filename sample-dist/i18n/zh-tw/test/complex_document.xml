@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns:custom="http://example.org/custom-namespace">
+    <metadata>
+        <title>複雜的XML文件測試</title>
+        <author>專案翻譯團隊</author>
+        <created>2023-07-15</created>
+        <version>1.0</version>
+        <language>en-US</language>
+    </metadata>
+    
+    <header>
+        <h1>XML格式測試文件</h1>
+        <subtitle>用於翻譯測試目的</subtitle>
+    </header>
+
+    <toc>
+        <section id="section1">介紹</section>
+        <section id="section2">代碼示例</section>
+        <section id="section3">數據表</section>
+        <section id="section4">自定義元素</section>
+        <section id="section5">混合內容</section>
+    </toc>
+
+    <content>
+        <section id="section1">
+            <h2>介紹</h2>
+            <p>這是一個設計用來測試Project Translator擴展翻譯能力的複雜XML文件。它包含了各種可能對翻譯造成挑戰的XML元素、屬性和內容類型。</p>
+            <p>該文件包括了<emphasis>格式化文本</emphasis>、<strong>強調文本</strong>和<code>內聯代碼</code>的示例，這些在翻譯時應被保留。</p>
+            <custom:note type="important">
+                這是一個帶有屬性的自定義元素，包含了應該在保留XML結構的同時小心翻譯的重要信息。
+            </custom:note>
+        </section>
+
+        <section id="section2">
+            <h2>代碼示例</h2>
+            <p>以下是不同編程語言的代碼示例，不應被翻譯：</p>
+            
+            <code-block language="javascript">
+function calculateSum(a, b) {
+    // 這是一個簡單的JavaScript函數
+    console.log("Calculating sum of", a, "and", b);
+    return a + b;
+}
+
+// 用測試值調用函數
+const result = calculateSum(5, 10);
+console.log(`The sum is: ${result}`);
+            </code-block>
+
+            <p>帶有應該被翻譯的註釋的Python示例：</p>
+            <code-block language="python">
+def process_data(data_list):
+    """
+    處理數據項列表並返回聚合結果。
+    這個文檔字符串應該在保留代碼的同時被翻譯。
+    """
+    results = []
+    for item in data_list:
+        # 轉換每個項目 - 這個註釋應該被翻譯
+        processed_item = item.strip().lower()
+        results.append(processed_item)
+    
+    return {
+        "count": len(results),
+        "items": results,
+        "status": "completed"
+    }
+            </code-block>
+        </section>
+
+        <section id="section3">
+            <h2>數據表</h2>
+            <p>以下是一個在翻譯後應保持其結構的示例數據表：</p>
+            
+            <table id="product-table">
+                <caption>產品比較</caption>
+                <thead>
+                    <tr>
+                        <th>產品名稱</th>
+                        <th>描述</th>
+                        <th>價格（美元）</th>
+                        <th>評級</th>
+                        <th>可用性</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SmartWidget Pro</td>
+                        <td>具有AI功能的高級智能小部件</td>
+<td>$199.99</td>
+                        <td>4.5/5.0</td>
+                        <td>In Stock</td>
+                    </tr>
+                    <tr>
+                        <td>DataAnalyzer Basic</td>
+                        <td>初學者使用的入門級數據分析工具</td>
+                        <td>$49.99</td>
+                        <td>3.8/5.0</td>
+                        <td>2-3週延遲</td>
+                    </tr>
+                    <tr>
+                        <td>CloudSync Enterprise</td>
+                        <td>企業級雲同步解決方案</td>
+                        <td>$399.99</td>
+                        <td>4.9/5.0</td>
+                        <td>需根據要求提供</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="5">價格和可用性可能會在未通知的情況下變更</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="section4">
+            <h2>自定義元素</h2>
+            <p>本節展示了應保留各種屬性的自定義XML元素：</p>
+            
+            <custom:component id="widget-1" type="display" priority="high">
+                <custom:property name="color">blue</custom:property>
+                <custom:property name="size">medium</custom:property>
+                <custom:property name="opacity">0.8</custom:property>
+                <custom:description>
+                    這是一個專門用於以互動格式可視化時間序列數據的顯示小部件。用戶可以放大/縮小並根據各種標準過濾數據點。
+                </custom:description>
+            </custom:component>
+
+            <custom:alert level="warning">
+                <title>系統資源警告</title>
+                <message>系統目前正在使用85%的可用記憶體容量。請考慮關閉未使用的應用程式以改善效能。</message>
+                <action-items>
+                    <item priority="high">關閉背景應用程式</item>
+                    <item priority="medium">清除臨時快取文件</item>
+                    <item priority="low">如果問題持續，請考慮重新啟動系統</item>
+                </action-items>
+            </custom:alert>
+        </section>
+
+        <section id="section5">
+            <h2>混合內容</h2>
+            <div class="mixed-content">
+                <p>本段落包含<em>強調文字</em>、<a href="https://example.com">超連結</a>和<span class="highlight">高亮顯示的段落</span>，這些都應在保留格式的情況下正確翻譯。</p>
+                
+                <blockquote author="Anonymous" source="技術文檔指南">
+                    好的文檔應該清晰、簡潔且全面。它應該預測用戶的問題，並在問題提出之前提供答案。
+                </blockquote>
+                
+                <ul class="feature-list">
+                    <li>響應式設計，可<strong>適應任何設備</strong>大小</li>
+                    <li>與<code>REST APIs</code>和GraphQL端點整合</li>
+                    <li>支援<em>實時數據處理</em>和可視化</li>
+                    <li>可自定義的儀表板，具有拖放界面</li>
+                </ul>
+                
+                <div class="info-panel">
+                    <h3>你知道嗎？</h3>
+                    <p>XML（可擴展標記語言）旨在存儲和傳輸數據，源自於更複雜的SGML（標準通用標記語言）。</p>
+                    <p>與HTML不同，XML標籤不是預定義的 - 你需要定義自己的標籤。</p>
+                </div>
+            </div>
+        </section>
+    </content>
+
+    <appendix>
+        <references>
+            <reference id="ref1">
+<citation>Smith, J. (2022). "Advanced XML Processing Techniques". Journal of Markup Languages, 15(3), 234-256.</citation>
+                <url>https://example.org/jml/15/3/234</url>
+            </reference>
+            <reference id="ref2">
+                <citation>Zhang, L. &amp; Johnson, T. (2021). "Multilingual Support in XML-based Documentation". International Documentation Standards, 8(2), 112-145.</citation>
+                <url>https://example.org/ids/8/2/112</url>
+            </reference>
+        </references>
+        
+        <glossary>
+            <term name="XML">eXtensible Markup Language</term>
+            <term name="DOM">Document Object Model</term>
+            <term name="XPath">XML Path Language</term>
+            <term name="XSD">XML Schema Definition</term>
+            <term name="XSLT">eXtensible Stylesheet Language Transformations</term>
+        </glossary>
+    </appendix>
+    
+    <footer>
+        <copyright>© 2023 Project Translator Team. 保留所有權利。</copyright>
+        <contact email="support@example.com" phone="+1-555-123-4567" />
+        <legal>
+            本文件僅供測試使用。未經適當署名，不得複製本文件的任何部分。
+        </legal>
+    </footer>
+</document>

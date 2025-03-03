@@ -1,0 +1,17 @@
+{
+  "command.translateProject": "Translate Project",
+  "command.pauseTranslation": "Pause Translation",
+  "command.resumeTranslation": "Resume Translation",
+  "command.stopTranslation": "Stop Translation",
+  "config.sourceFolder.description": "Source folder path, used to store the last selected translation folder path",
+  "config.destFolders.description": "Translation target folder configuration, multiple target folders and their corresponding target languages can be specified",
+  "config.translationIntervalDays.description": "Translation interval days, if the target file exists and has been translated within this number of days, it will be skipped",
+  "config.ignoreTranslationExtensions.description": "List of text file extensions that do not need to be translated, the files will be directly copied to the destination folder",
+  "config.ignorePaths.description": "List of ignored path patterns, using wildcards, the files will not be copied to the destination folder",
+  "config.currentVendor.description": "Currently used API vendor",
+  "config.vendors.description": "API vendor configuration list",
+  "config.systemPrompts.description": "System prompt array, used to guide the translation process, multiple system prompts can be added",
+  "config.userPrompts.description": "User-defined prompt array, these prompts will be added after the system prompts during the translation process",
+  "config.segmentationMarkers.description": "Segmentation markers configured by file type, supporting regular expressions",
+  "config.language.description": "Language for the extension"
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <metadata>
+        <title>大型XML测试文档</title>
+        <author>项目翻译团队</author>
+        <created>2023-10-01</created>
+        <version>1.0</version>
+        <language>en-US</language>
+    </metadata>
+
+    <content>
+        <section id="section1">
+            <h2>简介</h2>
+            <p>这是一个大型XML文档，旨在测试项目翻译扩展的翻译能力。它包含了各种可能对翻译构成挑战的XML元素、属性和内容类型。</p>
+            <p>该文档包括<emphasis>格式化文本</emphasis>、<strong>强强调</strong>和<code>内联代码</code>的示例，这些在翻译时应予以保留。</p>
+            <custom:note type="important">
+                这是一个带有属性的自定义元素，包含应在翻译时小心处理并保留XML结构的重要信息。
+            </custom:note>
+        </section>
+
+        <section id="section2">
+            <h2>代码示例</h2>
+            <p>以下是不同编程语言的代码示例，不应被翻译：</p>
+            <code-block language="javascript">
+function calculateSum(a, b) {
+    // 这是一个简单的JavaScript函数
+    console.log("Calculating sum of", a, "and", b);
+    return a + b;
+}
+
+// 使用测试值调用函数
+const result = calculateSum(5, 10);
+console.log(`The sum is: ${result}`);
+            </code-block>
+            <p>Python示例及其应被翻译的注释：</p>
+            <code-block language="python">
+def process_data(data_list):
+    """
+    处理数据项列表并返回聚合结果。
+    此文档字符串应在保留代码的同时被翻译。
+    """
+    results = []
+    for item in data_list:
+        # 转换每个项目 - 此注释应被翻译
+        processed_item = item.strip().lower()
+        results.append(processed_item)
+    return {
+        "count": len(results),
+        "items": results,
+        "status": "completed"
+    }
+            </code-block>
+        </section>
+
+        <section id="section3">
+            <h2>数据表</h2>
+            <p>下面是一个在翻译后应保持其结构的样本数据表：</p>
+            <table id="product-table">
+                <caption>产品比较</caption>
+                <thead>
+                    <tr>
+                        <th>产品名称</th>
+                        <th>描述</th>
+                        <th>价格（美元）</th>
+                        <th>评级</th>
+                        <th>可用性</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SmartWidget Pro</td>
+                        <td>具有AI功能的高级智能小部件</td>
+                        <td>$199.99</td>
+                        <td>4.5/5.0</td>
+                        <td>有货</td>
+                    </tr>
+                    <tr>
+                        <td>DataAnalyzer Basic</td>
+                        <td>面向初学者的入门级数据分析工具</td>
+                        <td>$49.99</td>
+                        <td>3.8/5.0</td>
+                        <td>2-3周延迟</td>
+                    </tr>
+                    <tr>
+                        <td>CloudSync Enterprise</td>
+                        <td>企业级云同步解决方案</td>
+                        <td>$399.99</td>
+                        <td>4.9/5.0</td>
+                        <td>根据请求提供</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+<td colspan="5">价格和可用性可能会随时变动，恕不另行通知</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="section4">
+            <h2>自定义元素</h2>
+            <p>本节展示了应保留各种属性的自定义XML元素：</p>
+            <custom:component id="widget-1" type="display" priority="high">
+                <custom:property name="color">blue</custom:property>
+                <custom:property name="size">medium</custom:property>
+                <custom:property name="opacity">0.8</custom:property>
+                <custom:description>
+                    这是一个专门用于以交互格式可视化时间序列数据的显示小部件。用户可以放大/缩小并根据各种标准过滤数据点。
+                </custom:description>
+            </custom:component>
+            <custom:alert level="warning">
+                <title>系统资源警告</title>
+                <message>系统当前运行在可用内存容量的85%。请考虑关闭未使用的应用程序以提高性能。</message>
+                <action-items>
+                    <item priority="high">关闭后台应用程序</item>
+                    <item priority="medium">清除临时缓存文件</item>
+                    <item priority="low">如果问题持续存在，请考虑重启系统</item>
+                </action-items>
+            </custom:alert>
+        </section>
+
+        <section id="section5">
+            <h2>混合内容</h2>
+            <div class="mixed-content">
+                <p>本段包含<em>强调文本</em>、<a href="https://example.com">超链接</a>和<span class="highlight">高亮段落</span>，应在保留格式的同时正确翻译。</p>
+                <blockquote author="Anonymous" source="技术文档指南">
+                    好的文档应该清晰、简洁、全面。它应该预见用户的问题并在问题提出之前提供答案。
+                </blockquote>
+                <ul class="feature-list">
+                    <li>响应式设计，可<strong>适应任何设备</strong>大小</li>
+                    <li>与<code>REST APIs</code>和GraphQL端点集成</li>
+                    <li>支持<em>实时数据处理</em>和可视化</li>
+                    <li>可自定义的仪表板，具有拖放界面</li>
+                </ul>
+                <div class="info-panel">
+                    <h3>您知道吗？</h3>
+                    <p>XML（可扩展标记语言）旨在存储和传输数据，它源自于更复杂的SGML（标准通用标记语言）。</p>
+                    <p>与HTML不同，XML标签不是预定义的 - 您需要定义自己的标签。</p>
+                </div>
+            </div>
+        </section>
+    </content>
+
+    <appendix>
+        <references>
+            <reference id="ref1">
+                <citation>Smith, J. (2022). "高级XML处理技术"。标记语言杂志，15(3)，234-256。</citation>
+                <url>https://example.org/jml/15/3/234</url>
+            </reference>
+            <reference id="ref2">
+                <citation>Zhang, L. &amp; Johnson, T. (2021). "XML基础文档中的多语言支持"。国际文档标准，8(2)，112-145。</citation>
+                <url>https://example.org/ids/8/2/112</url>
+            </reference>
+        </references>
+        <glossary>
+<term name="XML">可扩展标记语言</term>
+            <term name="DOM">文档对象模型</term>
+            <term name="XPath">XML路径语言</term>
+            <term name="XSD">XML模式定义</term>
+            <term name="XSLT">可扩展样式表语言转换</term>
+        </glossary>
+    </appendix>
+
+    <footer>
+        <copyright>© 2023 项目翻译团队。保留所有权利。</copyright>
+        <contact email="support@example.com" phone="+1-555-123-4567" />
+        <legal>
+            本文档仅供测试使用。未经适当署名，不得复制本文档的任何部分。
+        </legal>
+    </footer>
+</document>

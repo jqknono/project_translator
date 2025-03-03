@@ -1,0 +1,17 @@
+{
+  "command.translateProject": "翻譯項目",
+  "command.pauseTranslation": "暫停翻譯",
+  "command.resumeTranslation": "繼續翻譯",
+  "command.stopTranslation": "停止翻譯",
+  "config.sourceFolder.description": "源文件夾路徑，用於存儲上次選擇的翻譯文件夾路徑",
+  "config.destFolders.description": "翻譯目標文件夾配置，可以指定多個目標文件夾及其對應的目標語言",
+  "config.translationIntervalDays.description": "翻譯間隔天數，如果目標文件存在並且在此天數內已翻譯，則會跳過",
+  "config.ignoreTranslationExtensions.description": "不需要翻譯的文本文件擴展名列表，這些文件將直接複製到目標文件夾",
+  "config.ignorePaths.description": "忽略的路徑模式列表，使用通配符，這些文件將不會複製到目標文件夾",
+  "config.currentVendor.description": "當前使用的API供應商",
+  "config.vendors.description": "API供應商配置列表",
+  "config.systemPrompts.description": "系統提示數組，用於指導翻譯過程，可以添加多個系統提示",
+  "config.userPrompts.description": "用戶定義的提示數組，這些提示將在翻譯過程中添加到系統提示之後",
+  "config.segmentationMarkers.description": "按文件類型配置的分段標記，支持正則表達式",
+  "config.language.description": "擴展的語言"
+}

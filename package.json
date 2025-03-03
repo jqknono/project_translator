@@ -1,0 +1,368 @@
+{
+  "name": "project-translator",
+  "displayName": "Project Translator",
+  "description": "Translate their projects to other languages",
+  "version": "0.3.1",
+  "publisher": "techfetch-dev",
+  "icon": "resources/project-translator.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.translateProject",
+        "title": "Translate Project"
+      },
+      {
+        "command": "extension.pauseTranslation",
+        "title": "Pause Translation"
+      },
+      {
+        "command": "extension.resumeTranslation",
+        "title": "Resume Translation"
+      },
+      {
+        "command": "extension.stopTranslation",
+        "title": "Stop Translation"
+      }
+    ],
+    "configuration": {
+      "title": "Project Translator",
+      "properties": {
+        "projectTranslator.sourceFolder": {
+          "type": "string",
+          "default": "",
+          "description": "${config.sourceFolder.description}",
+          "order": 1
+        },
+        "projectTranslator.destFolders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "${config.destFolders.description}"
+              },
+              "lang": {
+                "type": "string",
+                "enum": [
+                  "zh-cn",
+                  "zh-tw",
+                  "en-us",
+                  "ja-jp",
+                  "ko-kr",
+                  "fr-fr",
+                  "de-de",
+                  "es-es",
+                  "pt-br",
+                  "ru-ru",
+                  "it-it",
+                  "nl-nl",
+                  "pl-pl",
+                  "tr-tr",
+                  "ar-sa",
+                  "hi-in",
+                  "vi-vn",
+                  "th-th",
+                  "id-id"
+                ],
+                "enumDescriptions": [
+                  "Simplified Chinese",
+                  "Traditional Chinese",
+                  "English (US)",
+                  "Japanese",
+                  "Korean",
+                  "French",
+                  "German",
+                  "Spanish",
+                  "Portuguese (Brazil)",
+                  "Russian",
+                  "Italian",
+                  "Dutch",
+                  "Polish",
+                  "Turkish",
+                  "Arabic",
+                  "Hindi",
+                  "Vietnamese",
+                  "Thai",
+                  "Indonesian"
+                ],
+                "default": "zh-cn",
+                "description": "Target language code"
+              }
+            },
+            "required": [
+              "path"
+            ]
+          },
+          "default": [],
+          "description": "${config.destFolders.description}",
+          "order": 2
+        },
+        "projectTranslator.translationIntervalDays": {
+          "type": "number",
+          "default": 7,
+          "description": "${config.translationIntervalDays.description}",
+          "order": 3
+        },
+        "projectTranslator.ignoreTranslationExtensions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            ".svg"
+          ],
+          "description": "${config.ignoreTranslationExtensions.description}",
+          "order": 4
+        },
+        "projectTranslator.ignorePaths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/.github/**",
+            "**/.vscode/**",
+            "**/.nuxt/**",
+            "**/.next/**"
+          ],
+          "description": "${config.ignorePaths.description}",
+          "order": 5
+        },
+        "projectTranslator.currentVendor": {
+          "type": "string",
+          "default": "openai",
+          "description": "${config.currentVendor.description}",
+          "order": 6
+        },
+        "projectTranslator.vendors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "${config.vendors.description}"
+              },
+              "apiEndpoint": {
+                "type": "string",
+                "description": "${config.vendors.description}"
+              },
+              "apiKey": {
+                "type": "string",
+                "description": "${config.vendors.description}"
+              },
+              "model": {
+                "type": "string",
+                "description": "${config.vendors.description}"
+              },
+              "rpm": {
+                "type": "number",
+                "description": "${config.vendors.description}"
+              },
+              "maxTokensPerSegment": {
+                "type": "number",
+                "description": "${config.vendors.description}",
+                "default": 4096
+              },
+              "timeout": {
+                "type": "number",
+                "description": "${config.vendors.description}",
+                "default": 30
+              },
+              "temperature": {
+                "type": "number",
+                "description": "${config.vendors.description}",
+                "minimum": 0,
+                "maximum": 2,
+                "default": 0
+              }
+            },
+            "required": [
+              "name",
+              "apiEndpoint",
+              "apiKey",
+              "model"
+            ]
+          },
+          "description": "${config.vendors.description}",
+          "order": 7
+        },
+        "projectTranslator.systemPrompts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "Please translate according to the following rules:\n1. Translate strictly according to the specified target language\n2. Maintain professional technical accuracy\n3. For code blocks:\n   - Only translate the comment part\n   - Keep the code syntax, variable names, and function names unchanged\n   - Keep the data structure of JSON, XML, etc. unchanged\n4. For ordinary text:\n   - Maintain the professionalism of technical terms\n   - Conform to the expression habits of the target language\n5. Maintain the format and structure of the original text\n6. Only return the translation result, do not include the original text or other descriptive content\n7. When translating code files, be careful not to add meaningless \\`\\`\\` at the beginning and end\n8. When translating structured files, do not modify the structure by yourself, such as xml, html, json, etc.\n9. If there is no content to be translated, return the original text"
+          ],
+          "description": "${config.systemPrompts.description}",
+          "order": 8
+        },
+        "projectTranslator.userPrompts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "${config.userPrompts.description}",
+          "order": 9
+        },
+        "projectTranslator.segmentationMarkers": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "default": {
+            "markdown": [
+              "^#\\s",
+              "^##\\s",
+              "^###\\s"
+            ],
+            "html": [
+              "^<h1[^>]*>",
+              "^<h2[^>]*>",
+              "^<h3[^>]*>"
+            ],
+            "javascript": [
+              "^function\\s+\\w+\\(",
+              "^class\\s+\\w+"
+            ],
+            "typescript": [
+              "^function\\s+\\w+\\(",
+              "^class\\s+\\w+",
+              "^interface\\s+\\w+"
+            ],
+            "python": [
+              "^def\\s+\\w+\\(",
+              "^class\\s+\\w+"
+            ],
+            "java": [
+              "^public\\s+(class|interface|enum)\\s+\\w+",
+              "^\\s*public\\s+\\w+\\s+\\w+\\("
+            ],
+            "go": [
+              "^func\\s+\\w+\\(",
+              "^type\\s+\\w+\\s+struct"
+            ],
+            "c#": [
+              "^public\\s+(class|interface|enum)\\s+\\w+",
+              "^\\s*public\\s+\\w+\\s+\\w+\\("
+            ],
+            "php": [
+              "^function\\s+\\w+\\(",
+              "^class\\s+\\w+"
+            ],
+            "ruby": [
+              "^def\\s+\\w+",
+              "^class\\s+\\w+"
+            ],
+            "rust": [
+              "^fn\\s+\\w+",
+              "^struct\\s+\\w+",
+              "^enum\\s+\\w+"
+            ],
+            "swift": [
+              "^func\\s+\\w+",
+              "^class\\s+\\w+",
+              "^struct\\s+\\w+"
+            ],
+            "kotlin": [
+              "^fun\\s+\\w+",
+              "^class\\s+\\w+"
+            ],
+            "plaintext": [
+              "^\\s*$"
+            ]
+          },
+          "description": "${config.segmentationMarkers.description}",
+          "order": 10
+        },
+        "projectTranslator.language": {
+          "type": "string",
+          "default": "en",
+          "description": "${config.language.description}",
+          "enum": [
+            "en",
+            "zh-cn",
+            "zh-tw",
+            "ja-jp"
+          ],
+          "enumDescriptions": [
+            "English",
+            "Simplified Chinese",
+            "Traditional Chinese",
+            "Japanese"
+          ]
+        },
+        "projectTranslator.enableMetrics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable sending anonymous usage metrics to help improve the extension",
+          "order": 11
+        }
+      }
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jqknono/project_translator"
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile:web": "webpack --mode development",
+    "watch:web": "webpack --mode development --watch",
+    "publish:minor": "node --no-deprecation ./node_modules/@vscode/vsce/vsce publish minor"
+  },
+  "devDependencies": {
+    "@types/chai": "^5.0.1",
+    "@types/glob": "^8.1.0",
+    "@types/minimatch": "^5.1.2",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^14.18.63",
+    "@types/sinon": "^17.0.4",
+    "@types/sqlite3": "^3.1.11",
+    "@types/vscode": "^1.74.0",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "@vscode/vsce": "^3.2.2",
+    "chai": "^5.2.0",
+    "eslint": "^7.0.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "sinon": "^19.0.2",
+    "ts-loader": "^9.5.2",
+    "typescript": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "isbinaryfile": "^5.0.0",
+    "minimatch": "^10.0.1",
+    "openai": "^4.85.3",
+    "sqlite3": "^5.1.7"
+  },
+  "capabilities": {
+    "virtualWorkspaces": true
+  },
+  "permissions": [
+    "machineId"
+  ]
+}

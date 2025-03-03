@@ -1,0 +1,26 @@
+{
+    "api_version": "v1",
+    "endpoints": {
+        "users": {
+            "get": {
+                "description": "ユーザー情報を取得する",
+                "parameters": {
+                    "id": "string",
+                    "fields": "array[string]"
+                },
+                "responses": {
+                    "200": "成功",
+                    "404": "ユーザーが見つかりません"
+                }
+            },
+            "post": {
+                "description": "新しいユーザーを作成する",
+                "required_fields": [
+                    "username",
+                    "email",
+                    "password"
+                ]
+            }
+        }
+    }
+}

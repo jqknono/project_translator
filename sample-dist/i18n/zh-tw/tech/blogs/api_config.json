@@ -1,0 +1,26 @@
+{
+    "api_version": "v1",
+    "endpoints": {
+        "users": {
+            "get": {
+                "description": "獲取用戶信息",
+                "parameters": {
+                    "id": "string",
+                    "fields": "array[string]"
+                },
+                "responses": {
+                    "200": "成功",
+                    "404": "用戶未找到"
+                }
+            },
+            "post": {
+                "description": "創建新用戶",
+                "required_fields": [
+                    "username",
+                    "email",
+                    "password"
+                }
+            }
+        }
+    }
+}

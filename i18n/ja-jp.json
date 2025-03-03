@@ -1,0 +1,17 @@
+{
+  "command.translateProject": "プロジェクトを翻訳",
+  "command.pauseTranslation": "翻訳を一時停止",
+  "command.resumeTranslation": "翻訳を再開",
+  "command.stopTranslation": "翻訳を停止",
+  "config.sourceFolder.description": "ソースフォルダのパス、最後に選択された翻訳フォルダのパスを保存するために使用されます",
+  "config.destFolders.description": "翻訳ターゲットフォルダの構成、複数のターゲットフォルダとそれに対応するターゲット言語を指定できます",
+  "config.translationIntervalDays.description": "翻訳間隔日数、ターゲットファイルが存在し、この日数内に翻訳されている場合はスキップされます",
+  "config.ignoreTranslationExtensions.description": "翻訳する必要のないテキストファイルの拡張子のリスト、これらのファイルはターゲットフォルダに直接コピーされます",
+  "config.ignorePaths.description": "ワイルドカードを使用して無視されるパスパターンのリスト、これらのファイルはターゲットフォルダにコピーされません",
+  "config.currentVendor.description": "現在使用されているAPIベンダー",
+  "config.vendors.description": "APIベンダーの構成リスト",
+  "config.systemPrompts.description": "翻訳プロセスをガイドするために使用されるシステムプロンプトの配列、複数のシステムプロンプトを追加できます",
+  "config.userPrompts.description": "ユーザー定義のプロンプト配列、これらのプロンプトは翻訳プロセス中にシステムプロンプトの後に追加されます",
+  "config.segmentationMarkers.description": "ファイルタイプごとに構成されたセグメンテーションマーカー、正規表現をサポート",
+  "config.language.description": "拡張機能の言語"
+}

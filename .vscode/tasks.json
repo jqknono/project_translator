@@ -1,0 +1,44 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "run",
+                "compile"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$tsc"],
+            "detail": "Compile TypeScript files"
+        },
+        {
+            "label": "watch",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "run",
+                "watch"
+            ],
+            "group": "build",
+            "problemMatcher": ["$tsc-watch"],
+            "detail": "Watch TypeScript files for changes"
+        },
+        {
+            "label": "package",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "run",
+                "package"
+            ],
+            "group": "build",
+            "problemMatcher": [],
+            "detail": "Package VS Code extension"
+        }
+    ]
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <metadata>
+        <title>Large XML Test Document</title>
+        <author>Project Translator Team</author>
+        <created>2023-10-01</created>
+        <version>1.0</version>
+        <language>en-US</language>
+    </metadata>
+
+    <content>
+        <section id="section1">
+            <h2>導入</h2>
+            <p>これは、Project Translator拡張機能の翻訳能力をテストするために設計された大規模なXMLドキュメントです。翻訳に挑戦を与える可能性のあるさまざまなXML要素、属性、およびコンテンツタイプが含まれています。</p>
+            <p>このドキュメントには、<emphasis>フォーマットされたテキスト</emphasis>、<strong>強調表示</strong>、および<code>インラインコード</code>の例が含まれており、翻訳中に保持されるべきです。</p>
+            <custom:note type="important">
+                これは、重要な情報を含む属性を持つカスタム要素であり、XML構造を保持しながら注意深く翻訳されるべきです。
+            </custom:note>
+        </section>
+
+        <section id="section2">
+            <h2>コードの例</h2>
+            <p>以下は翻訳すべきではない異なるプログラミング言語のコードの例です:</p>
+            <code-block language="javascript">
+function calculateSum(a, b) {
+    // これはシンプルなJavaScript関数です
+    console.log("Calculating sum of", a, "and", b);
+    return a + b;
+}
+
+// テスト値で関数を呼び出す
+const result = calculateSum(5, 10);
+console.log(`The sum is: ${result}`);
+            </code-block>
+            <p>コメントが翻訳されるべきPythonの例:</p>
+            <code-block language="python">
+def process_data(data_list):
+    """
+    データ項目のリストを処理し、集計結果を返します。
+    このドキュメント文字列はコードを保持しながら翻訳されるべきです。
+    """
+    results = []
+    for item in data_list:
+        # 各項目を変換する - このコメントは翻訳されるべきです
+        processed_item = item.strip().lower()
+        results.append(processed_item)
+    return {
+        "count": len(results),
+        "items": results,
+        "status": "completed"
+    }
+            </code-block>
+        </section>
+
+        <section id="section3">
+            <h2>データテーブル</h2>
+            <p>以下は、翻訳後に構造を維持すべきサンプルのデータテーブルです:</p>
+            <table id="product-table">
+                <caption>製品比較</caption>
+                <thead>
+                    <tr>
+                        <th>製品名</th>
+                        <th>説明</th>
+                        <th>価格 (USD)</th>
+                        <th>評価</th>
+                        <th>在庫状況</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SmartWidget Pro</td>
+                        <td>AI機能を持つ高度なスマートウィジェット</td>
+                        <td>$199.99</td>
+                        <td>4.5/5.0</td>
+                        <td>在庫あり</td>
+                    </tr>
+                    <tr>
+                        <td>DataAnalyzer Basic</td>
+                        <td>初心者向けのエントリーレベルのデータ分析ツール</td>
+                        <td>$49.99</td>
+                        <td>3.8/5.0</td>
+                        <td>2-3週間の遅延</td>
+                    </tr>
+                    <tr>
+                        <td>CloudSync Enterprise</td>
+                        <td>エンタープライズグレードのクラウド同期ソリューション</td>
+                        <td>$399.99</td>
+                        <td>4.9/5.0</td>
+                        <td>リクエストに応じて利用可能</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+<td colspan="5">価格と在庫状況は予告なく変更されることがあります</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="section4">
+            <h2>カスタムエレメント</h2>
+            <p>このセクションでは、さまざまな属性を保持すべきカスタムXMLエレメントをデモンストレーションします:</p>
+            <custom:component id="widget-1" type="display" priority="high">
+                <custom:property name="color">blue</custom:property>
+                <custom:property name="size">medium</custom:property>
+                <custom:property name="opacity">0.8</custom:property>
+                <custom:description>
+                    これは、インタラクティブな形式で時系列データを視覚化するために使用される特殊な表示ウィジェットです。ユーザーはズームイン/アウトを行い、さまざまな基準に基づいてデータポイントをフィルタリングできます。
+                </custom:description>
+            </custom:component>
+            <custom:alert level="warning">
+                <title>システムリソース警告</title>
+                <message>システムは現在、利用可能なメモリ容量の85%で動作しています。パフォーマンスを向上させるために、使用されていないアプリケーションを閉じてください。</message>
+                <action-items>
+                    <item priority="high">バックグラウンドアプリケーションを閉じる</item>
+                    <item priority="medium">一時キャッシュファイルをクリアする</item>
+                    <item priority="low">問題が続く場合はシステムを再起動することを検討してください</item>
+                </action-items>
+            </custom:alert>
+        </section>
+
+        <section id="section5">
+            <h2>混合コンテンツ</h2>
+            <div class="mixed-content">
+                <p>この段落には、<em>強調されたテキスト</em>、<a href="https://example.com">ハイパーリンク</a>、および<span class="highlight">強調されたセグメント</span>が含まれており、フォーマットを保持しながら適切に翻訳する必要があります。</p>
+                <blockquote author="Anonymous" source="Technical Documentation Guidelines">
+                    良いドキュメントは、明確で簡潔かつ包括的であるべきです。それはユーザーの質問を予測し、質問される前に答えを提供するべきです。
+                </blockquote>
+                <ul class="feature-list">
+                    <li><strong>どのデバイスにも適応する</strong>レスポンシブデザイン</li>
+                    <li><code>REST APIs</code>およびGraphQLエンドポイントとの統合</li>
+                    <li><em>リアルタイムデータ処理</em>と視覚化のサポート</li>
+                    <li>ドラッグアンドドロップインターフェースを持つカスタマイズ可能なダッシュボード</li>
+                </ul>
+                <div class="info-panel">
+                    <h3>知っていましたか？</h3>
+                    <p>XML（eXtensible Markup Language）はデータの保存と転送のために設計され、より複雑なSGML（Standard Generalized Markup Language）から派生しました。</p>
+                    <p>HTMLとは異なり、XMLのタグは事前に定義されていません - 自分でタグを定義する必要があります。</p>
+                </div>
+            </div>
+        </section>
+    </content>
+
+    <appendix>
+        <references>
+            <reference id="ref1">
+                <citation>Smith, J. (2022). "Advanced XML Processing Techniques". Journal of Markup Languages, 15(3), 234-256.</citation>
+                <url>https://example.org/jml/15/3/234</url>
+            </reference>
+            <reference id="ref2">
+                <citation>Zhang, L. &amp; Johnson, T. (2021). "Multilingual Support in XML-based Documentation". International Documentation Standards, 8(2), 112-145.</citation>
+                <url>https://example.org/ids/8/2/112</url>
+            </reference>
+        </references>
+        <glossary>
+<term name="XML">拡張マークアップ言語</term>
+            <term name="DOM">ドキュメントオブジェクトモデル</term>
+            <term name="XPath">XMLパス言語</term>
+            <term name="XSD">XMLスキーマ定義</term>
+            <term name="XSLT">拡張スタイルシート言語変換</term>
+        </glossary>
+    </appendix>
+
+    <footer>
+        <copyright>© 2023 Project Translator Team. すべての権利を保有します。</copyright>
+        <contact email="support@example.com" phone="+1-555-123-4567" />
+        <legal>
+            このドキュメントはテスト目的でのみ提供されます。このドキュメントの一部も適切な帰属表示なしに複製することはできません。
+        </legal>
+    </footer>
+</document>

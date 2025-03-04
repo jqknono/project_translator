@@ -63,7 +63,7 @@ Current translations in progress: [View Issues](https://github.com/jqknono/proje
 
 ## Installation
 
-1. Search for "Project Translator" in VS Code extension marketplace
+1. Search for "[Project Translator](https://marketplace.visualstudio.com/items?itemName=techfetch-dev.project-translator)" in VS Code extension marketplace
 2. Click install
 
 ## Configuration

@@ -6,7 +6,7 @@ A VSCode extension: An easy-to-use tool for multi-language localization of proje
 
 | Project                                                   | Languages                                                                                                                               |
 | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| [google/styleguide](https://github.com/google/styleguide) | [en-us](https://github.com/google/styleguide) origin by @google<br>[zh-cn](https://github.com/jqknono/styleguide) translate by @jqknono |
+| [google/styleguide](https://github.com/google/styleguide) | [en-us](https://github.com/google/styleguide) origin by @google<br>[zh-cn](https://github.com/Project-Translation/styleguide-zh-cn) translate by @jqknono |
 
 ## Requesting Project Translation
 
